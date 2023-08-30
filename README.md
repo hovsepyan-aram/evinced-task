@@ -1,3 +1,30 @@
+# Description
+
+The main component is the `Table` component. It receives 2 props - columns, data.
+
+## `columns`
+
+The `columns` prop represents the defenition of the columns.
+
+### `key`
+Data accessor key for the column.
+
+### `title`
+Title for display.
+
+### `dataType`
+`string` or `number` to sort properly.
+
+### `searchable` - optiinal
+Indicates whether to display a search input in the column header.
+
+### `renderer` - optional
+A function that gets the value of the column and returns JSX that will be displayed in the column.
+
+## data
+
+The only restriction for the data array is that each entry should have an id.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
