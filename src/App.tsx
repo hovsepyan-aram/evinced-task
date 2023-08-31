@@ -1,24 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Table, TableColumn } from './components';
+import { tableData } from './data';
 
+const columns: TableColumn[] = [
+  {
+    key: 'id',
+    title: 'No.',
+    dataType: 'number',
+  },
+  {
+    key: 'issueType',
+    title: 'Issue Type',
+    dataType: 'string',
+  },
+  {
+    key: 'severity',
+    title: 'Severity',
+    dataType: 'string',
+  },
+  {
+    key: 'Component',
+    title: 'Component',
+    dataType: 'string',
+  },
+  {
+    key: 'selector',
+    title: 'Selector',
+    searchable: true,
+    dataType: 'string',
+  },
+  {
+    key: 'url',
+    title: 'Url',
+    searchable: true,
+    renderer: (value) => <a href={value}>{value}</a>,
+    dataType: 'string',
+  }
+];
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Table columns={columns} data={tableData} />
     </div>
   );
 }
